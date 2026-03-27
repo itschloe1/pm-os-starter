@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM-OS Starter</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <a href="index.html"><div class="logo">PM-<span>OS</span> Starter</div></a>
+    <div class="badge">for Opensurvey PMs</div>
+  </nav>
+
+  <section class="hero" style="padding: 48px 0 40px; text-align: center;">
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px;">4일이면<br><em style="font-style: normal; color: var(--accent);">PM 파워유저</em>가 됩니다</h1>
+    <p style="font-size: 16px; color: var(--text-muted); max-width: 480px; margin: 0 auto; line-height: 1.7;">Claude Code 기반 PM 운영체제. 캘린더, Slack, Jira를 연결하면 매일 쓰는 업무가 자동화됩니다. 읽지 말고, 바로 실행하세요.</p>
+  </section>
+
+  <div class="card">
+    <div class="section-label">Getting Started</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Claude Code 설치</h3>
+          <p><a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank">Claude Code 설치 가이드</a>를 따라 설치합니다. 터미널에서 <code>claude</code> 명령어가 동작하면 OK.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>PM-OS Starter 폴더에서 실행</h3>
+          <div class="code-block" onclick="copyCode(this, 'cd ~/PM-OS-Starter && claude')">
+            <span>cd ~/PM-OS-Starter && claude</span>
+            <span class="copy-hint">click to copy</span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>시작하기</h3>
+          <p>Claude Code가 열리면 아래를 입력하세요. MCP 연결부터 첫 결과물까지 15분이면 됩니다.</p>
+          <div class="code-block" onclick="copyCode(this, '/start')">
+            <span>/start</span>
+            <span class="copy-hint">click to copy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px; margin-bottom: 8px;">
+    <div class="section-label">4-Day Onboarding</div>
+  </div>
+
+  <div class="day-grid">
+    <a href="day1.html" class="day-card">
+      <div class="day-badge">1</div>
+      <div class="day-info">
+        <h3>연결하고 바로 쓰기</h3>
+        <div class="subtitle">Google Calendar, Slack, Jira 연결 + 첫 Daily Plan 생성</div>
+      </div>
+      <div class="day-meta">
+        <span class="time">30-40분</span>
+        <span class="cmd">/day1</span>
+      </div>
+      <div class="arrow">&rsaquo;</div>
+    </a>
+    <a href="day2.html" class="day-card">
+      <div class="day-badge">2</div>
+      <div class="day-info">
+        <h3>커뮤니케이션</h3>
+        <div class="subtitle">Slack 메시지 전송, Jira 기반 주간보고, 액션아이템 추출</div>
+      </div>
+      <div class="day-meta">
+        <span class="time">20-30분</span>
+        <span class="cmd">/day2</span>
+      </div>
+      <div class="arrow">&rsaquo;</div>
+    </a>
+    <a href="day3.html" class="day-card">
+      <div class="day-badge">3</div>
+      <div class="day-info">
+        <h3>맥락 채우기</h3>
+        <div class="subtitle">PM-OS가 나에 대해 인터뷰. 개인화된 PRD 결과 체험</div>
+      </div>
+      <div class="day-meta">
+        <span class="time">30-40분</span>
+        <span class="cmd">/day3</span>
+      </div>
+      <div class="arrow">&rsaquo;</div>
+    </a>
+    <a href="day4.html" class="day-card">
+      <div class="day-badge">4</div>
+      <div class="day-info">
+        <h3>파워유저</h3>
+        <div class="subtitle">주간 루틴 세팅, context-library 확장, 커스텀 스킬 만들기</div>
+      </div>
+      <div class="day-meta">
+        <span class="time">30-40분</span>
+        <span class="cmd">/day4</span>
+      </div>
+      <div class="arrow">&rsaquo;</div>
+    </a>
+  </div>
+
+  <div class="card" style="margin-top: 32px; text-align: center;">
+    <div class="section-label">Core Loop</div>
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+      PM-OS는 <strong style="color: var(--text);">Context Engineering</strong>으로 동작합니다.<br>
+      context-library/에 맥락을 넣을수록, 모든 스킬의 결과가 좋아집니다.
+    </p>
+    <div class="flow">
+      <div class="flow-item">MCP 연결</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">스킬 실행</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">결과물 생성</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">맥락 축적</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item" style="color: var(--accent); border-color: rgba(110,231,183,0.2);">더 좋은 결과</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="section-label">22 Skills Available</div>
+    <div class="skills-grid">
+      <div class="skill-tag">/daily-plan<span class="desc">매일 아침 우선순위</span></div>
+      <div class="skill-tag">/meeting-notes<span class="desc">미팅 후 정리</span></div>
+      <div class="skill-tag">/slack-message<span class="desc">Slack 메시지 초안</span></div>
+      <div class="skill-tag">/status-update<span class="desc">주간보고</span></div>
+      <div class="skill-tag">/prd-draft<span class="desc">PRD 작성</span></div>
+      <div class="skill-tag">/prd-review-panel<span class="desc">멀티 관점 리뷰</span></div>
+      <div class="skill-tag">/meeting-cleanup<span class="desc">하루 미팅 일괄 정리</span></div>
+      <div class="skill-tag">/impact-sizing<span class="desc">기회 크기 추정</span></div>
+      <div class="skill-tag">/action-items<span class="desc">액션아이템 추출</span></div>
+      <div class="skill-tag">/weekly-plan<span class="desc">주간 우선순위</span></div>
+      <div class="skill-tag">/decision-doc<span class="desc">의사결정 기록</span></div>
+      <div class="skill-tag">/create-tickets<span class="desc">Jira 티켓 분해</span></div>
+    </div>
+    <p style="font-size: 12px; color: var(--text-dim); margin-top: 12px; text-align: center;">
+      + 10 more skills (sales-brief, weekly-review, ask-nova, generate-ai-prototype...)
+    </p>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="section-label">Recommended Daily Routine</div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">09:00</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/daily-plan</code> &mdash; 오늘 우선순위 정리</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">미팅 후</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/meeting-notes</code> &mdash; 구조화 + 액션아이템</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">공유 시</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/slack-message</code> &mdash; 팀에 메시지 전송</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">금요일</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/weekly-review</code> &mdash; 한 주 회고</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Built by Nova for Opensurvey Product Team<br>
+      Questions? Slack <a href="#">#team-pm</a> 채널에서 물어보세요
+    </p>
+  </footer>
+
+</div>
+
+<script>
+function copyCode(el, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.add('copied');
+    el.querySelector('.copy-hint').textContent = 'copied!';
+    setTimeout(() => {
+      el.classList.remove('copied');
+      el.querySelector('.copy-hint').textContent = 'click to copy';
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

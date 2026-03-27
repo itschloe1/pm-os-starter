@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 3: 맥락 채우기 - PM-OS Starter</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <a href="index.html"><div class="logo">PM-<span>OS</span> Starter</div></a>
+    <div class="badge">Day 3 of 4</div>
+  </nav>
+
+  <div class="page-header">
+    <a href="index.html" class="back-link">&larr; 코스 목록</a>
+    <div class="day-num">3</div>
+    <h1>맥락 채우기</h1>
+    <div class="meta">
+      <span>30-40분</span>
+      <span><code style="color: var(--accent);">/day3</code></span>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="card" style="text-align: center;">
+    <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7;">
+      PM-OS의 진짜 힘은 <strong style="color: var(--text);">Context Engineering</strong>입니다.<br>
+      오늘은 PM-OS가 <strong style="color: var(--accent);">나에 대해</strong> 물어봅니다.<br>
+      인터뷰가 끝나면 /prd-draft, /status-update 같은 스킬이 "내 스타일"로 결과를 만들어냅니다.
+    </p>
+  </div>
+
+  <!-- Lesson 1 -->
+  <div class="lesson">
+    <div class="lesson-num">실습 1</div>
+    <h2>"나에 대해 알려주기" 인터뷰</h2>
+    <p><code style="color: var(--accent);">/day3</code>을 실행하면 PM-OS가 6가지 영역에 대해 물어봅니다. 길게 쓸 필요 없어요. 평소 쓰는 말투로 편하게 답하면 됩니다.</p>
+
+    <div class="code-block" onclick="copyCode(this, '/day3')">
+      <span>/day3</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div style="min-width: 24px; height: 24px; border-radius: 6px; background: var(--accent-dim); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">1</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600;">역할과 담당 범위</div>
+          <div style="font-size: 13px; color: var(--text-muted);">"어떤 제품/서비스를 담당하고, 주로 어떤 의사결정을 하나요?"</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div style="min-width: 24px; height: 24px; border-radius: 6px; background: var(--accent-dim); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">2</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600;">업무 스타일</div>
+          <div style="font-size: 13px; color: var(--text-muted);">"문서 중심 vs 대화 중심? 빠른 의사결정 vs 숙고형?"</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div style="min-width: 24px; height: 24px; border-radius: 6px; background: var(--accent-dim); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">3</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600;">의사결정 기준</div>
+          <div style="font-size: 13px; color: var(--text-muted);">"PRD 리뷰할 때 가장 먼저 보는 것? 좋은 결과물의 기준은?"</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div style="min-width: 24px; height: 24px; border-radius: 6px; background: var(--accent-dim); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">4</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600;">주요 이해관계자</div>
+          <div style="font-size: 13px; color: var(--text-muted);">"누구와 가장 많이 협업? 상위 의사결정자는?"</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div style="min-width: 24px; height: 24px; border-radius: 6px; background: var(--accent-dim); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">5</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600;">현재 집중 영역</div>
+          <div style="font-size: 13px; color: var(--text-muted);">"이번 분기에 가장 중요한 이니셔티브는? 왜 그게 중요한가요?"</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <div style="min-width: 24px; height: 24px; border-radius: 6px; background: var(--accent-dim); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">6</div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600;">글쓰기 스타일</div>
+          <div style="font-size: 13px; color: var(--text-muted);">"평소 문서 쓰는 톤이 어떤가요? 예시 문서 있으면 공유해주세요."</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="expected" style="margin-top: 16px;">
+      <h4>생성되는 파일</h4>
+      <ul>
+        <li><code>context-library/personal/working-preferences.md</code> - 업무 스타일, 커뮤니케이션 선호</li>
+        <li><code>context-library/personal/stakeholder-map.md</code> - 주요 이해관계자</li>
+        <li><code>context-library/personal/current-focus.md</code> - 현재 집중 영역</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Lesson 2 -->
+  <div class="lesson">
+    <div class="lesson-num">실습 2</div>
+    <h2>Before/After 비교</h2>
+    <p>인터뷰가 끝났으니, Context가 채워진 상태에서 /prd-draft를 실행해봅니다.</p>
+
+    <div class="code-block" onclick="copyCode(this, '/prd-draft')">
+      <span>/prd-draft</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <p>아무 피처 아이디어를 말해보세요. 예: "사용자가 리포트를 자동으로 스케줄링할 수 있는 기능"</p>
+
+    <div class="expected">
+      <h4>주목할 점</h4>
+      <ul>
+        <li>인터뷰에서 말한 <strong style="color: var(--text);">의사결정 기준</strong>이 PRD에 반영되는가?</li>
+        <li><strong style="color: var(--text);">이해관계자</strong> 이름이 Review 섹션에 나오는가?</li>
+        <li><strong style="color: var(--text);">현재 집중 영역</strong>과의 전략 정합성이 체크되는가?</li>
+        <li><strong style="color: var(--text);">글쓰기 톤</strong>이 나와 비슷한가?</li>
+      </ul>
+    </div>
+
+    <div class="tip">Day 1에서 MCP 없이 /daily-plan 쳤을 때 vs 연결 후의 차이를 기억하시죠? 그것처럼, context-library가 채워지면 모든 스킬의 결과가 한 단계 올라갑니다.</div>
+  </div>
+
+  <!-- Bonus -->
+  <div class="lesson">
+    <div class="lesson-num">보너스</div>
+    <h2>context-library 더 채우기</h2>
+    <p>시간이 있다면, 아래 폴더에 기존 문서를 넣어보세요. <strong style="color: var(--text);">파일을 넣기만 하면</strong> 스킬이 알아서 찾아 씁니다.</p>
+
+    <ul>
+      <li><code>context-library/strategy/</code> - OKR, 분기 목표 문서</li>
+      <li><code>context-library/prds/</code> - 완료된 PRD</li>
+      <li><code>context-library/research/</code> - 유저 리서치, 경쟁사 분석</li>
+    </ul>
+
+    <div class="tip">완벽하지 않아도 괜찮습니다. 하나씩 넣어가면 됩니다. 가장 임팩트 큰 순서: strategy/ &rarr; prds/ &rarr; research/</div>
+  </div>
+
+  <div class="day-nav">
+    <a href="day2.html">&larr; Day 2: 커뮤니케이션</a>
+    <a href="day4.html" class="next">Day 4: 파워유저 &rarr;</a>
+  </div>
+
+</div>
+
+<script>
+function copyCode(el, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.add('copied');
+    el.querySelector('.copy-hint').textContent = 'copied!';
+    setTimeout(() => { el.classList.remove('copied'); el.querySelector('.copy-hint').textContent = 'copy'; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

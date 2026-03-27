@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 2: 커뮤니케이션 - PM-OS Starter</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <a href="index.html"><div class="logo">PM-<span>OS</span> Starter</div></a>
+    <div class="badge">Day 2 of 4</div>
+  </nav>
+
+  <div class="page-header">
+    <a href="index.html" class="back-link">&larr; 코스 목록</a>
+    <div class="day-num">2</div>
+    <h1>커뮤니케이션</h1>
+    <div class="meta">
+      <span>20-30분</span>
+      <span><code style="color: var(--accent);">/day2</code></span>
+    </div>
+  </div>
+
+  <!-- Lesson 1 -->
+  <div class="lesson">
+    <div class="lesson-num">실습 1</div>
+    <h2>/slack-message</h2>
+    <p>팀에 공유할 내용이 있을 때 씁니다. 채널과 톤에 맞게 메시지를 만들어주고, Slack MCP가 연결되어 있으면 <strong style="color: var(--text);">바로 전송</strong>도 됩니다.</p>
+
+    <div class="code-block" onclick="copyCode(this, '/slack-message')">
+      <span>/slack-message</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <p>상황을 설명하세요. 예: "어제 플랜 개편 미팅에서 결정된 사항을 제품팀 채널에 공유하고 싶어"</p>
+
+    <div class="expected">
+      <h4>기대 결과</h4>
+      <ul>
+        <li>채널과 톤에 맞는 Slack 메시지 초안</li>
+        <li>Slack MCP 연결 시 바로 전송 가능</li>
+        <li>outputs/slack-messages/에 저장</li>
+      </ul>
+    </div>
+
+    <div class="tip">"이 메시지를 #product-team 채널에 보내줘"라고 하면 Slack MCP가 직접 전송합니다.</div>
+  </div>
+
+  <!-- Lesson 2 -->
+  <div class="lesson">
+    <div class="lesson-num">실습 2</div>
+    <h2>/status-update</h2>
+    <p>스테이크홀더에게 보내는 주간보고. Jira 데이터를 <strong style="color: var(--text);">자동으로 반영</strong>합니다.</p>
+
+    <div class="code-block" onclick="copyCode(this, '/status-update')">
+      <span>/status-update</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <p>이번 주에 한 일을 간단히 나열하거나, 그냥 실행만 해도 Jira + 미팅 노트에서 자동으로 뽑아줍니다.</p>
+
+    <div class="expected">
+      <h4>기대 결과</h4>
+      <ul>
+        <li>"이번 주 완료 / 진행 중 / 다음 주 계획" 구조</li>
+        <li>Jira 스프린트에서 티켓 상태 자동 반영</li>
+        <li>읽는 사람(경영진, 팀)에 맞게 톤 조절</li>
+      </ul>
+    </div>
+
+    <div class="tip">금요일 오후에 /status-update를 루틴으로 쓰면 주간보고가 10분 안에 끝납니다.</div>
+  </div>
+
+  <!-- Lesson 3 -->
+  <div class="lesson">
+    <div class="lesson-num">실습 3</div>
+    <h2>/action-items</h2>
+    <p>미팅 노트나 Slack 스레드에서 액션아이템만 쏙 뽑아줍니다.</p>
+
+    <div class="code-block" onclick="copyCode(this, '/action-items')">
+      <span>/action-items</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <p>미팅 노트나 Slack 스레드를 붙여넣으세요. 어제 /meeting-notes로 만든 노트를 넣어봐도 좋습니다.</p>
+
+    <div class="expected">
+      <h4>기대 결과</h4>
+      <ul>
+        <li>토픽별로 그룹된 체크리스트</li>
+        <li>각 항목에 오너, 기한 자동 배정</li>
+        <li>Jira 연동 시 티켓 생성 제안</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Combo -->
+  <div class="card" style="margin-top: 8px;">
+    <div class="section-label">Day 1 + Day 2 조합의 위력</div>
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">이 플로우를 한번 해보면 PM-OS의 가치가 체감됩니다.</p>
+    <div class="flow">
+      <div class="flow-item" style="color: var(--accent); border-color: rgba(110,231,183,0.2);">미팅 후</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">/meeting-notes</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">/action-items</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">/slack-message</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item" style="color: var(--accent); border-color: rgba(110,231,183,0.2);">팀에 공유</div>
+    </div>
+  </div>
+
+  <div class="day-nav">
+    <a href="day1.html">&larr; Day 1: 연결하고 바로 쓰기</a>
+    <a href="day3.html" class="next">Day 3: 맥락 채우기 &rarr;</a>
+  </div>
+
+</div>
+
+<script>
+function copyCode(el, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.add('copied');
+    el.querySelector('.copy-hint').textContent = 'copied!';
+    setTimeout(() => { el.classList.remove('copied'); el.querySelector('.copy-hint').textContent = 'copy'; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 1: 연결하고 바로 쓰기 - PM-OS Starter</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <a href="index.html"><div class="logo">PM-<span>OS</span> Starter</div></a>
+    <div class="badge">Day 1 of 4</div>
+  </nav>
+
+  <div class="page-header">
+    <a href="index.html" class="back-link">&larr; 코스 목록</a>
+    <div class="day-num">1</div>
+    <h1>연결하고 바로 쓰기</h1>
+    <div class="meta">
+      <span>30-40분</span>
+      <span><code style="color: var(--accent);">/day1</code></span>
+    </div>
+  </div>
+
+  <!-- Lesson 1 -->
+  <div class="lesson">
+    <div class="lesson-num">Lesson 1</div>
+    <h2>Google Calendar 연결</h2>
+    <p>PM-OS의 핵심은 <strong style="color: var(--text);">내 업무 도구가 연결되어 있다는 것</strong>입니다. 캘린더를 연결하면 /daily-plan이 오늘 미팅을 자동으로 가져옵니다.</p>
+
+    <div class="code-block" onclick="copyCode(this, 'claude mcp add google-calendar -- npx -y @anthropic-ai/google-calendar-mcp@latest')">
+      <span style="font-size: 12px;">claude mcp add google-calendar -- npx -y @anthropic-ai/google-calendar-mcp@latest</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <p style="margin-top: 12px;">브라우저에서 Google 인증을 완료하세요.</p>
+
+    <div class="expected">
+      <h4>확인 방법</h4>
+      <ul>
+        <li>Claude Code에서 "오늘 일정 보여줘" 입력</li>
+        <li>캘린더 데이터가 나오면 성공</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Lesson 2 -->
+  <div class="lesson">
+    <div class="lesson-num">Lesson 2</div>
+    <h2>Slack 연결</h2>
+    <p>Slack을 연결하면 /slack-message로 작성한 메시지를 채널에 바로 보낼 수 있습니다.</p>
+
+    <p>Claude.ai > Settings > Integrations에서 Slack 연결하거나:</p>
+    <div class="code-block" onclick="copyCode(this, '/connect-mcps connect to slack')">
+      <span>/connect-mcps connect to slack</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <div class="expected">
+      <h4>확인 방법</h4>
+      <ul>
+        <li>"Slack 채널 목록 보여줘" 입력</li>
+        <li>채널 리스트가 나오면 성공</li>
+      </ul>
+    </div>
+
+    <div class="tip">연결이 안 되면 건너뛰세요. 나중에 /connect-mcps로 언제든 추가할 수 있습니다.</div>
+  </div>
+
+  <!-- Lesson 3 -->
+  <div class="lesson">
+    <div class="lesson-num">Lesson 3</div>
+    <h2>Atlassian (Jira/Confluence) 연결</h2>
+    <p>Jira를 연결하면 /status-update에 스프린트 데이터가 자동 반영되고, /create-tickets로 티켓을 직접 만들 수 있습니다.</p>
+
+    <p>Claude.ai > Settings > Integrations에서 Atlassian 연결하거나:</p>
+    <div class="code-block" onclick="copyCode(this, '/connect-mcps connect to atlassian')">
+      <span>/connect-mcps connect to atlassian</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <div class="expected">
+      <h4>확인 방법</h4>
+      <ul>
+        <li>"Jira 프로젝트 목록 보여줘" 입력</li>
+        <li>프로젝트 리스트가 나오면 성공</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Lesson 4 -->
+  <div class="lesson">
+    <div class="lesson-num">실습 1</div>
+    <h2>/daily-plan 실행</h2>
+    <p>MCP가 연결됐으니, <strong style="color: var(--text);">진짜 데이터</strong>로 오늘의 플랜을 만들어봅니다.</p>
+
+    <div class="code-block" onclick="copyCode(this, '/daily-plan')">
+      <span>/daily-plan</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <div class="expected">
+      <h4>기대 결과</h4>
+      <ul>
+        <li>오늘 캘린더에서 미팅을 자동으로 가져옴</li>
+        <li>미팅별 컨텍스트 (참석자, 안건 추정)</li>
+        <li>우선순위가 정리된 오늘의 Top 3</li>
+        <li>Jira에서 할당된 티켓 참조 (연결된 경우)</li>
+      </ul>
+    </div>
+
+    <div class="tip">MCP 없이도 동작하지만, 캘린더 데이터가 있을 때와 없을 때의 차이를 느껴보세요. 이게 PM-OS가 ChatGPT와 다른 이유입니다.</div>
+  </div>
+
+  <!-- Lesson 5 -->
+  <div class="lesson">
+    <div class="lesson-num">실습 2</div>
+    <h2>/meeting-notes 실행</h2>
+    <p>오늘 미팅이 끝나면 (또는 어제 미팅 노트가 있다면) 바로 써보세요.</p>
+
+    <div class="code-block" onclick="copyCode(this, '/meeting-notes')">
+      <span>/meeting-notes</span>
+      <span class="copy-hint">copy</span>
+    </div>
+
+    <p>미팅 노트를 붙여넣으세요. 음성 메모 텍스트, 자유 형식 메모, 녹음 전사 등 아무거나 OK.</p>
+
+    <div class="expected">
+      <h4>기대 결과</h4>
+      <ul>
+        <li>구조화된 미팅 노트 (요약, 결정사항, 액션아이템)</li>
+        <li>각 액션아이템에 오너와 기한 자동 배정</li>
+        <li>outputs/meeting-notes/에 파일 저장</li>
+      </ul>
+    </div>
+
+    <div class="tip">미팅 직후에 바로 쓰는 게 가장 좋습니다. 기억이 생생할 때.</div>
+  </div>
+
+  <!-- Summary -->
+  <div class="card" style="text-align: center; margin-top: 8px;">
+    <div class="section-label">Day 1 요약</div>
+    <div style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+      <div style="font-size: 14px;">
+        <strong style="color: var(--accent);">MCP 연결</strong>
+        <span style="color: var(--text-muted);"> = PM-OS가 내 실제 데이터를 읽을 수 있게 하는 것</span>
+      </div>
+      <div style="font-size: 14px;">
+        <strong style="color: var(--accent);">/daily-plan</strong>
+        <span style="color: var(--text-muted);"> = 매일 아침 루틴. 캘린더 + Jira 기반 우선순위</span>
+      </div>
+      <div style="font-size: 14px;">
+        <strong style="color: var(--accent);">/meeting-notes</strong>
+        <span style="color: var(--text-muted);"> = 미팅 후 루틴. raw 노트에서 구조화된 결과물</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-nav">
+    <a href="index.html">&larr; 코스 목록</a>
+    <a href="day2.html" class="next">Day 2: 커뮤니케이션 &rarr;</a>
+  </div>
+
+</div>
+
+<script>
+function copyCode(el, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    el.classList.add('copied');
+    el.querySelector('.copy-hint').textContent = 'copied!';
+    setTimeout(() => { el.classList.remove('copied'); el.querySelector('.copy-hint').textContent = 'copy'; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
