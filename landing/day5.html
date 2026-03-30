@@ -146,7 +146,7 @@
         <li>리뷰어 전원 피드백 반영 완료</li>
         <li>스코프 (In/Out) 확정</li>
         <li>성공 지표 + Kill criteria 정의됨</li>
-        <li>PM이 Lock 선언, PM Director에게 공유</li>
+        <li>PM이 Lock 선언</li>
       </ul>
     </div>
   </div>
@@ -226,12 +226,8 @@
         <li>보안 검토 통과</li>
         <li>롤백 계획 + 기준 문서화</li>
         <li>Kill criteria 대시보드 라이브</li>
-        <li><strong style="color: var(--accent);">PM Director 론치 Go/No-Go 승인</strong></li>
+        <li><strong style="color: var(--accent);">론치 Go/No-Go 판정</strong></li>
       </ul>
-    </div>
-
-    <div style="margin-top: 12px; padding: 10px 14px; background: rgba(250,204,21,0.08); border: 1px solid rgba(250,204,21,0.15); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted);">
-      <strong style="color: #facc15;">Gate:</strong> 이 단계는 PM Director 승인이 필요한 2곳 중 하나입니다. 나머지 Phase는 PM이 자율 진행하고 공유만 하면 됩니다.
     </div>
   </div>
 
@@ -308,39 +304,17 @@
       <h4>이 단계가 끝나면</h4>
       <ul>
         <li>Primary Metric 판정 완료</li>
-        <li><strong style="color: var(--accent);">Go/Kill/Iterate 판정 (PM Director 승인)</strong></li>
+        <li><strong style="color: var(--accent);">Go/Kill/Iterate 판정</strong> (계속 / 중단 / 개선 후 재시도)</li>
         <li>Lessons learned 문서화</li>
         <li>다음 iteration 백로그 정리</li>
       </ul>
-    </div>
-
-    <div style="margin-top: 12px; padding: 10px 14px; background: rgba(250,204,21,0.08); border: 1px solid rgba(250,204,21,0.15); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted);">
-      <strong style="color: #facc15;">Gate:</strong> PM Director 승인이 필요한 2곳 중 두 번째. Go(계속), Kill(중단), Iterate(개선 후 재시도) 중 하나를 결정합니다.
-    </div>
-  </div>
-
-  <!-- Summary -->
-  <div class="card" style="margin-top: 8px;">
-    <div class="section-label">PM Director 승인 규칙</div>
-    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px;">
-      PM Director는 병목이 되지 않는다. 대부분의 Phase는 PM이 자율 진행하고 공유만 하면 된다.
-    </p>
-    <div style="display: flex; flex-direction: column; gap: 8px;">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 16px;">🔒</span>
-        <span style="font-size: 13px;"><strong>승인 필요 (2개만):</strong> 검증 &rarr; 론치 Go/No-Go, 사후 &rarr; Go/Kill/Iterate</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 16px;">📢</span>
-        <span style="font-size: 13px;"><strong>나머지:</strong> PM이 진행하고 공유. 24시간 이의 없으면 자동 진행</span>
-      </div>
     </div>
   </div>
 
   <div class="card" style="margin-top: 16px;">
     <div class="section-label">상세 프로세스 문서</div>
     <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
-      Phase별 Definition of Done, 체크포인트, PM vs PM Director 역할 구분 등 상세 내용은 <code style="color: var(--accent);">context-library/pm-process-standard.md</code>에 있습니다.
+      Phase별 Definition of Done, 체크포인트 등 상세 내용은 <code style="color: var(--accent);">context-library/pm-process-standard.md</code>에 있습니다.
     </p>
   </div>
 
