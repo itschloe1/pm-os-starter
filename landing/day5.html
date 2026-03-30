@@ -115,6 +115,8 @@
     </div>
   </div>
 
+  <div style="display: flex; align-items: center; gap: 12px; margin: 8px 0;"><div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);"></div></div>
+
   <!-- Phase 1: PRD -->
   <div class="lesson">
     <div class="lesson-num">Phase 1</div>
@@ -151,6 +153,8 @@
     </div>
   </div>
 
+  <div style="display: flex; align-items: center; gap: 12px; margin: 8px 0;"><div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);"></div></div>
+
   <!-- Phase 2: 설계 -->
   <div class="lesson">
     <div class="lesson-num">Phase 2</div>
@@ -175,6 +179,8 @@
     </div>
   </div>
 
+  <div style="display: flex; align-items: center; gap: 12px; margin: 8px 0;"><div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);"></div></div>
+
   <!-- Phase 3: 스프린트 -->
   <div class="lesson">
     <div class="lesson-num">Phase 3</div>
@@ -190,6 +196,14 @@
         </div>
         <span style="font-size: 12px; color: var(--text-muted);">Jira 티켓 생성</span>
       </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">2</span>
+        <div class="code-block" onclick="copyCode(this, '/launch-checklist')" style="flex: 1; margin: 0;">
+          <span>/launch-checklist</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">론치 체크리스트 초안 시작</span>
+      </div>
     </div>
 
     <div class="expected">
@@ -201,6 +215,8 @@
       </ul>
     </div>
   </div>
+
+  <div style="display: flex; align-items: center; gap: 12px; margin: 8px 0;"><div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);"></div></div>
 
   <!-- Phase 4: 검증 -->
   <div class="lesson">
@@ -231,23 +247,33 @@
     </div>
   </div>
 
+  <div style="display: flex; align-items: center; gap: 12px; margin: 8px 0;"><div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);"></div></div>
+
   <!-- Phase 5: 론치 -->
   <div class="lesson">
     <div class="lesson-num">Phase 5</div>
     <h2>론치</h2>
-    <p>"고객에게 어떻게 전달하나?" CS 브리핑, 세일즈 브리프, 고객 커뮤니케이션을 준비하고 배포합니다.</p>
+    <p>"고객에게 어떻게 전달하나?" <code style="color: var(--accent);">/launch-comms</code>로 5개 커뮤니케이션 문서를 한 번에 생성하고, 필요하면 개별 스킬로 보완합니다.</p>
 
     <div style="display: flex; flex-direction: column; gap: 8px; margin: 16px 0;">
       <div style="display: flex; align-items: center; gap: 10px;">
         <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">1</span>
+        <div class="code-block" onclick="copyCode(this, '/launch-comms')" style="flex: 1; margin: 0;">
+          <span>/launch-comms</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">론치 커뮤니케이션 5종 생성</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">2</span>
         <div class="code-block" onclick="copyCode(this, '/sales-brief')" style="flex: 1; margin: 0;">
           <span>/sales-brief</span>
           <span class="copy-hint">copy</span>
         </div>
-        <span style="font-size: 12px; color: var(--text-muted);">세일즈 브리프</span>
+        <span style="font-size: 12px; color: var(--text-muted);">세일즈 브리프 보완</span>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">2</span>
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">3</span>
         <div class="code-block" onclick="copyCode(this, '/slack-message')" style="flex: 1; margin: 0;">
           <span>/slack-message</span>
           <span class="copy-hint">copy</span>
@@ -255,7 +281,7 @@
         <span style="font-size: 12px; color: var(--text-muted);">팀/고객 안내</span>
       </div>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">3</span>
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">4</span>
         <div class="code-block" onclick="copyCode(this, '/status-update')" style="flex: 1; margin: 0;">
           <span>/status-update</span>
           <span class="copy-hint">copy</span>
@@ -274,6 +300,8 @@
       </ul>
     </div>
   </div>
+
+  <div style="display: flex; align-items: center; gap: 12px; margin: 8px 0;"><div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);"></div></div>
 
   <!-- Phase 6: 사후 -->
   <div class="lesson">
@@ -311,11 +339,55 @@
     </div>
   </div>
 
+  <!-- Completion -->
+  <div class="card" style="text-align: center; margin-top: 24px;">
+    <div style="font-size: 24px; margin-bottom: 12px;">&#127942;</div>
+    <div class="section-label">5일 온보딩 완료!</div>
+    <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 20px;">
+      Discovery부터 론치까지, PM-OS의 모든 스킬을 실습했습니다.<br>
+      이제 실제 피처에 적용해보세요.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 6px; text-align: left; max-width: 480px; margin: 0 auto;">
+      <div style="display: flex; gap: 12px; font-size: 14px;">
+        <span style="color: var(--accent); min-width: 42px;">Day 1</span>
+        <span style="color: var(--text-muted);">MCP 연결 + /daily-plan + /meeting-notes</span>
+      </div>
+      <div style="display: flex; gap: 12px; font-size: 14px;">
+        <span style="color: var(--accent); min-width: 42px;">Day 2</span>
+        <span style="color: var(--text-muted);">/slack-message + /status-update + /action-items</span>
+      </div>
+      <div style="display: flex; gap: 12px; font-size: 14px;">
+        <span style="color: var(--accent); min-width: 42px;">Day 3</span>
+        <span style="color: var(--text-muted);">개인 인터뷰 + Context Engineering + /prd-draft</span>
+      </div>
+      <div style="display: flex; gap: 12px; font-size: 14px;">
+        <span style="color: var(--accent); min-width: 42px;">Day 4</span>
+        <span style="color: var(--text-muted);">주간 루틴 + context 확장 + 커스텀 스킬</span>
+      </div>
+      <div style="display: flex; gap: 12px; font-size: 14px;">
+        <span style="color: var(--accent); min-width: 42px;">Day 5</span>
+        <span style="color: var(--text-muted);">피처 개발 7단계 + /launch-comms + /launch-checklist</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 8px; text-align: center;">
+    <p style="font-size: 14px; color: var(--text-muted);">
+      PM-OS는 쓸수록 강해집니다.<br>
+      context-library를 채우고, 스킬을 만들고, 루틴을 쌓아가세요.
+    </p>
+  </div>
+
   <div class="card" style="margin-top: 16px;">
     <div class="section-label">상세 프로세스 문서</div>
     <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
       Phase별 Definition of Done, 체크포인트 등 상세 내용은 <code style="color: var(--accent);">context-library/pm-process-standard.md</code>에 있습니다.
     </p>
+  </div>
+
+  <div class="day-nav">
+    <a href="day4.html">&larr; Day 4: 파워유저</a>
+    <a href="index.html" class="next">코스 목록으로 &rarr;</a>
   </div>
 
   <footer>

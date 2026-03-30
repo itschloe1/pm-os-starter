@@ -125,8 +125,12 @@ code {
   position: relative;
   transition: border-color 0.2s;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  overflow-x: auto;
+  word-break: break-word;
 }
 
 .code-block:hover { border-color: var(--border-hover); }
@@ -136,6 +140,8 @@ code {
   color: var(--text-dim);
   font-family: var(--font);
   transition: color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .code-block:hover .copy-hint { color: var(--text-muted); }
@@ -167,6 +173,11 @@ code {
   font-size: 13px;
   font-weight: 700;
   margin-top: 2px;
+}
+
+.step-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .step-content h3 {
@@ -417,6 +428,8 @@ code {
   margin-top: 12px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
+
+.lesson > *:last-child { margin-bottom: 0; }
 
 /* ── Nav between days ── */
 .day-nav {

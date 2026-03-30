@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM-OS Dashboard</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <div class="logo">PM-<span>OS</span> Dashboard</div>
+    <div class="badge">private</div>
+  </nav>
+
+  <section style="padding: 32px 0 24px; text-align: center;">
+    <h1 style="font-size: 28px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 8px;">Usage Tracker</h1>
+    <p style="font-size: 14px; color: var(--text-muted);">PM-OS Starter skill usage across the team</p>
+  </section>
+
+  <div class="card" id="leaderboard-card">
+    <div class="section-label">Team Leaderboard</div>
+    <div class="lb-tabs">
+      <button class="lb-tab active" onclick="showLbPanel('pm')">PM Rankings</button>
+      <button class="lb-tab" onclick="showLbPanel('skills')">Popular Skills</button>
+      <button class="lb-tab" onclick="showLbPanel('trend')">Weekly Trend</button>
+    </div>
+
+    <div id="lb-pm" class="lb-panel active">
+      <div class="lb-empty" id="lb-pm-empty">Loading...</div>
+      <table class="lb-table" id="lb-pm-table" style="display:none;"></table>
+    </div>
+
+    <div id="lb-skills" class="lb-panel">
+      <div class="lb-empty" id="lb-skills-empty">Loading...</div>
+      <div id="lb-skills-bars"></div>
+    </div>
+
+    <div id="lb-trend" class="lb-panel">
+      <div class="lb-empty" id="lb-trend-empty">Loading...</div>
+      <div id="lb-trend-bars"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p style="font-size: 12px; color: var(--text-dim);">This page is not linked from the main site.</p>
+  </footer>
+
+</div>
+
+<script>
+function showLbPanel(panel) {
+  document.querySelectorAll('.lb-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.lb-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.getElementById('lb-' + panel).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function renderLeaderboard(data) {
+  var pmTable = document.getElementById('lb-pm-table');
+  var pmEmpty = document.getElementById('lb-pm-empty');
+  if (data.by_pm && data.by_pm.length) {
+    var html = '<thead><tr><th>#</th><th>PM</th><th>Uses</th></tr></thead><tbody>';
+    data.by_pm.forEach(function(pm, i) {
+      var rankClass = i < 3 ? ' lb-rank-' + (i + 1) : '';
+      var streak = pm.streak_days > 0
+        ? '<span class="lb-streak">' + pm.streak_days + 'd streak</span>'
+        : '';
+      html += '<tr>'
+        + '<td><span class="lb-rank' + rankClass + '">' + (i + 1) + '</span></td>'
+        + '<td><span class="lb-name">' + pm.pm_id + '</span>' + streak + '</td>'
+        + '<td>' + pm.count + '</td>'
+        + '</tr>';
+    });
+    html += '</tbody>';
+    pmTable.innerHTML = html;
+    pmTable.style.display = '';
+    pmEmpty.style.display = 'none';
+  } else {
+    pmEmpty.textContent = 'No usage data yet. Start using skills!';
+  }
+
+  var skillsBars = document.getElementById('lb-skills-bars');
+  var skillsEmpty = document.getElementById('lb-skills-empty');
+  if (data.by_skill && data.by_skill.length) {
+    var maxCount = data.by_skill[0].count;
+    var html = '';
+    data.by_skill.slice(0, 7).forEach(function(s) {
+      var pct = Math.round((s.count / maxCount) * 100);
+      html += '<div class="lb-bar-row">'
+        + '<span class="lb-bar-label">/' + s.skill.replace(/^\//, '') + '</span>'
+        + '<div class="lb-bar-track"><div class="lb-bar-fill" style="width:' + pct + '%"></div></div>'
+        + '<span class="lb-bar-count">' + s.count + '</span>'
+        + '</div>';
+    });
+    skillsBars.innerHTML = html;
+    skillsEmpty.style.display = 'none';
+  } else {
+    skillsEmpty.textContent = 'No usage data yet.';
+  }
+
+  var trendBars = document.getElementById('lb-trend-bars');
+  var trendEmpty = document.getElementById('lb-trend-empty');
+  if (data.weekly_trend && data.weekly_trend.length) {
+    var weeks = data.weekly_trend.slice().reverse();
+    var maxW = Math.max.apply(null, weeks.map(function(w) { return w.count; }));
+    var html = '';
+    weeks.forEach(function(w) {
+      var pct = Math.round((w.count / maxW) * 100);
+      html += '<div class="lb-bar-row">'
+        + '<span class="lb-bar-label">' + w.week + '</span>'
+        + '<div class="lb-bar-track"><div class="lb-bar-fill" style="width:' + pct + '%"></div></div>'
+        + '<span class="lb-bar-count">' + w.count + '</span>'
+        + '</div>';
+    });
+    trendBars.innerHTML = html;
+    trendEmpty.style.display = 'none';
+  } else {
+    trendEmpty.textContent = 'Not enough data for trends yet.';
+  }
+}
+
+function loadLeaderboard() {
+  fetch('/api/leaderboard')
+    .then(function(r) { return r.json(); })
+    .then(renderLeaderboard)
+    .catch(function() {
+      document.getElementById('lb-pm-empty').textContent = 'Could not load leaderboard.';
+      document.getElementById('lb-skills-empty').textContent = 'Could not load data.';
+      document.getElementById('lb-trend-empty').textContent = 'Could not load data.';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadLeaderboard();
+  setInterval(loadLeaderboard, 300000);
+});
+</script>
+
+</body>
+</html>
