@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { recordEvent, getLeaderboard, toggleOptOut } = require('./db');
+const { getDb, recordEvent, getLeaderboard, toggleOptOut } = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -65,6 +65,12 @@ app.post('/api/opt-out', (req, res) => {
 // Static files
 app.use(express.static(path.join(__dirname)));
 
-app.listen(PORT, () => {
-  console.log(`PM-OS Starter running on port ${PORT}`);
+// Initialize DB then start server
+getDb().then(() => {
+  app.listen(PORT, () => {
+    console.log(`PM-OS Starter running on port ${PORT}`);
+  });
+}).catch(err => {
+  console.error('Failed to initialize database:', err);
+  process.exit(1);
 });
