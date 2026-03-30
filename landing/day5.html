@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 5: 피처 개발 프로세스 - PM-OS Starter</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="container">
+
+  <nav>
+    <a href="index.html"><div class="logo">PM-<span>OS</span> Starter</div></a>
+    <div class="badge">Day 5 of 5</div>
+  </nav>
+
+  <div class="page-header">
+    <a href="index.html" class="back-link">&larr; 코스 목록</a>
+    <div class="day-num">5</div>
+    <h1>피처 개발 프로세스</h1>
+    <div class="meta">
+      <span>읽기 15분 + 실습 30분</span>
+      <span><code style="color: var(--accent);">/day5</code></span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom: 24px;">
+    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7;">
+      Day 1~4에서는 매일 쓰는 루틴 스킬을 배웠어요. Day 5에서는 <strong style="color: var(--text);">피처 하나가 아이디어에서 론치까지 가는 전체 흐름</strong>을 배웁니다. 각 단계에서 어떤 스킬을 쓰는지, 다음 단계로 넘어가려면 뭐가 충족돼야 하는지를 익혀보세요.
+    </p>
+  </div>
+
+  <!-- Process Overview -->
+  <div class="card" style="margin-bottom: 24px; text-align: center;">
+    <div class="section-label">전체 프로세스 맵</div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 16px 0;">
+      <div style="background: var(--accent-dim); border: 1px solid rgba(110,231,183,0.2); border-radius: 8px; padding: 8px 14px; font-size: 12px; font-family: var(--mono);">
+        <span style="color: var(--accent);">0</span> Discovery
+      </div>
+      <div style="color: var(--text-dim); display: flex; align-items: center;">&rarr;</div>
+      <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; font-family: var(--mono);">
+        <span style="color: var(--accent);">1</span> PRD
+      </div>
+      <div style="color: var(--text-dim); display: flex; align-items: center;">&rarr;</div>
+      <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; font-family: var(--mono);">
+        <span style="color: var(--accent);">2</span> 설계
+      </div>
+      <div style="color: var(--text-dim); display: flex; align-items: center;">&rarr;</div>
+      <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; font-family: var(--mono);">
+        <span style="color: var(--accent);">3</span> 스프린트
+      </div>
+      <div style="color: var(--text-dim); display: flex; align-items: center;">&rarr;</div>
+      <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; font-family: var(--mono);">
+        <span style="color: var(--accent);">4</span> 검증
+      </div>
+      <div style="color: var(--text-dim); display: flex; align-items: center;">&rarr;</div>
+      <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; font-family: var(--mono);">
+        <span style="color: var(--accent);">5</span> 론치
+      </div>
+      <div style="color: var(--text-dim); display: flex; align-items: center;">&rarr;</div>
+      <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 12px; font-family: var(--mono);">
+        <span style="color: var(--accent);">6</span> 사후
+      </div>
+    </div>
+    <p style="font-size: 12px; color: var(--text-dim);">각 단계를 아래에서 하나씩 살펴봅니다</p>
+  </div>
+
+  <!-- Phase 0: Discovery -->
+  <div class="lesson">
+    <div class="lesson-num">Phase 0</div>
+    <h2>Discovery / Shaping</h2>
+    <p>"이걸 만들 가치가 있나?" 를 검증하는 단계. 문제를 정의하고, 기회 크기를 추정하고, 프로토타입으로 빠르게 검증합니다.</p>
+
+    <div style="margin: 16px 0 8px; font-size: 13px; color: var(--text-muted); font-weight: 600;">스킬 순서</div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">1</span>
+        <div class="code-block" onclick="copyCode(this, '/impact-sizing')" style="flex: 1; margin: 0;">
+          <span>/impact-sizing</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">기회 크기 추정</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">2</span>
+        <div class="code-block" onclick="copyCode(this, '/generate-ai-prototype')" style="flex: 1; margin: 0;">
+          <span>/generate-ai-prototype</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">프로토타입 제작</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">3</span>
+        <div class="code-block" onclick="copyCode(this, '/simulate-user')" style="flex: 1; margin: 0;">
+          <span>/simulate-user</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">페르소나 시뮬레이션</span>
+      </div>
+    </div>
+
+    <div class="expected">
+      <h4>이 단계가 끝나면</h4>
+      <ul>
+        <li>문제가 해결할 가치가 있는지 검증됨</li>
+        <li>프로토타입으로 방향 검증됨 (AI 시뮬레이션 + 실제 피드백)</li>
+        <li>PRD를 쓸지, 프로토타입+Constraint Doc으로 갈지 판정</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 12px; padding: 10px 14px; background: var(--accent-dim); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted);">
+      <strong style="color: var(--accent);">Tip:</strong> <code>/generate-ai-prototype</code>으로 프로토타입 만들고 &rarr; <code>/simulate-user</code>로 ICP 페르소나 반응 시뮬레이션 &rarr; 수정 &rarr; 다시 시뮬레이션. 이 루프를 빠르게 돌린 후 실제 고객에게 시연하세요.
+    </div>
+  </div>
+
+  <!-- Phase 1: PRD -->
+  <div class="lesson">
+    <div class="lesson-num">Phase 1</div>
+    <h2>PRD Lock</h2>
+    <p>"뭘 만들고, 왜 만드는가"를 정렬하는 단계. PRD를 작성하고 리뷰어 피드백을 반영해서 스코프를 확정합니다.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; margin: 16px 0;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">1</span>
+        <div class="code-block" onclick="copyCode(this, '/prd-draft')" style="flex: 1; margin: 0;">
+          <span>/prd-draft</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">PRD 초안 작성</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">2</span>
+        <div class="code-block" onclick="copyCode(this, '/prd-review-panel')" style="flex: 1; margin: 0;">
+          <span>/prd-review-panel</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">멀티 관점 리뷰</span>
+      </div>
+    </div>
+
+    <div class="expected">
+      <h4>이 단계가 끝나면</h4>
+      <ul>
+        <li>리뷰어 전원 피드백 반영 완료</li>
+        <li>스코프 (In/Out) 확정</li>
+        <li>성공 지표 + Kill criteria 정의됨</li>
+        <li>PM이 Lock 선언, PM Director에게 공유</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Phase 2: 설계 -->
+  <div class="lesson">
+    <div class="lesson-num">Phase 2</div>
+    <h2>설계 (SRS + Figma)</h2>
+    <p>"PRD 대로 만들 수 있나?"를 확인하는 단계. TL이 SRS를 작성하고, UX가 Figma를 만듭니다. PM은 트래킹하고 Open Question을 해소합니다.</p>
+
+    <div style="margin: 16px 0; padding: 14px; background: var(--surface-1); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted); line-height: 1.7;">
+      이 단계에서는 별도 스킬 없이 PM이 직접 챙깁니다:<br>
+      &bull; SRS가 PRD 스코프와 맞는지 확인<br>
+      &bull; Figma 리뷰<br>
+      &bull; 개발/QA와 요구사항 확정일 합의<br>
+      &bull; 보안 검토 요청 (해당 시)
+    </div>
+
+    <div class="expected">
+      <h4>이 단계가 끝나면</h4>
+      <ul>
+        <li>SRS + Figma 확정</li>
+        <li>요구사항 확정일 합의 (개발/QA 서명)</li>
+        <li>Open Questions 해소됨</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Phase 3: 스프린트 -->
+  <div class="lesson">
+    <div class="lesson-num">Phase 3</div>
+    <h2>스프린트 (개발)</h2>
+    <p>실제로 만드는 단계. PM은 티켓을 생성하고, 진행을 트래킹하고, 블로커를 해소합니다.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; margin: 16px 0;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">1</span>
+        <div class="code-block" onclick="copyCode(this, '/create-tickets')" style="flex: 1; margin: 0;">
+          <span>/create-tickets</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">Jira 티켓 생성</span>
+      </div>
+    </div>
+
+    <div class="expected">
+      <h4>이 단계가 끝나면</h4>
+      <ul>
+        <li>스프린트 목표 기능 개발 완료</li>
+        <li>론치 체크리스트 초안 완성</li>
+        <li>Analytics 이벤트 구현 확인</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Phase 4: 검증 -->
+  <div class="lesson">
+    <div class="lesson-num">Phase 4</div>
+    <h2>검증 (QA + 보안)</h2>
+    <p>"론치해도 되나?"를 확인하는 단계. QA 테스트, 보안 검토, 내부 Dogfood, 롤백 계획을 점검합니다.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; margin: 16px 0;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">1</span>
+        <div class="code-block" onclick="copyCode(this, '/launch-checklist')" style="flex: 1; margin: 0;">
+          <span>/launch-checklist</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">론치 체크리스트 생성</span>
+      </div>
+    </div>
+
+    <div class="expected">
+      <h4>이 단계가 끝나면</h4>
+      <ul>
+        <li>Critical bug 0건</li>
+        <li>보안 검토 통과</li>
+        <li>롤백 계획 + 기준 문서화</li>
+        <li>Kill criteria 대시보드 라이브</li>
+        <li><strong style="color: var(--accent);">PM Director 론치 Go/No-Go 승인</strong></li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 12px; padding: 10px 14px; background: rgba(250,204,21,0.08); border: 1px solid rgba(250,204,21,0.15); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted);">
+      <strong style="color: #facc15;">Gate:</strong> 이 단계는 PM Director 승인이 필요한 2곳 중 하나입니다. 나머지 Phase는 PM이 자율 진행하고 공유만 하면 됩니다.
+    </div>
+  </div>
+
+  <!-- Phase 5: 론치 -->
+  <div class="lesson">
+    <div class="lesson-num">Phase 5</div>
+    <h2>론치</h2>
+    <p>"고객에게 어떻게 전달하나?" CS 브리핑, 세일즈 브리프, 고객 커뮤니케이션을 준비하고 배포합니다.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; margin: 16px 0;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">1</span>
+        <div class="code-block" onclick="copyCode(this, '/sales-brief')" style="flex: 1; margin: 0;">
+          <span>/sales-brief</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">세일즈 브리프</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">2</span>
+        <div class="code-block" onclick="copyCode(this, '/slack-message')" style="flex: 1; margin: 0;">
+          <span>/slack-message</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">팀/고객 안내</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">3</span>
+        <div class="code-block" onclick="copyCode(this, '/status-update')" style="flex: 1; margin: 0;">
+          <span>/status-update</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">스테이크홀더 업데이트</span>
+      </div>
+    </div>
+
+    <div class="expected">
+      <h4>이 단계가 끝나면</h4>
+      <ul>
+        <li>Comms doc 완성, 마케팅 핸드오프</li>
+        <li>CS 브리핑 완료</li>
+        <li>Sales Brief 세일즈팀에 공유</li>
+        <li>Feature flag on, 모니터링 라이브</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Phase 6: 사후 -->
+  <div class="lesson">
+    <div class="lesson-num">Phase 6</div>
+    <h2>사후 (임팩트 리뷰)</h2>
+    <p>"잘 됐나? 계속할까?" 론치 후 1주, 4주에 걸쳐 메트릭을 리뷰하고, 계속/중단/개선을 판정합니다.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; margin: 16px 0;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">1</span>
+        <div class="code-block" onclick="copyCode(this, '/feature-results')" style="flex: 1; margin: 0;">
+          <span>/feature-results</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">론치 결과 분석</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 20px; text-align: right; font-family: var(--mono);">2</span>
+        <div class="code-block" onclick="copyCode(this, '/weekly-review')" style="flex: 1; margin: 0;">
+          <span>/weekly-review</span>
+          <span class="copy-hint">copy</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">주간 회고에 반영</span>
+      </div>
+    </div>
+
+    <div class="expected">
+      <h4>이 단계가 끝나면</h4>
+      <ul>
+        <li>Primary Metric 판정 완료</li>
+        <li><strong style="color: var(--accent);">Go/Kill/Iterate 판정 (PM Director 승인)</strong></li>
+        <li>Lessons learned 문서화</li>
+        <li>다음 iteration 백로그 정리</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 12px; padding: 10px 14px; background: rgba(250,204,21,0.08); border: 1px solid rgba(250,204,21,0.15); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted);">
+      <strong style="color: #facc15;">Gate:</strong> PM Director 승인이 필요한 2곳 중 두 번째. Go(계속), Kill(중단), Iterate(개선 후 재시도) 중 하나를 결정합니다.
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="card" style="margin-top: 8px;">
+    <div class="section-label">PM Director 승인 규칙</div>
+    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px;">
+      PM Director는 병목이 되지 않는다. 대부분의 Phase는 PM이 자율 진행하고 공유만 하면 된다.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 16px;">🔒</span>
+        <span style="font-size: 13px;"><strong>승인 필요 (2개만):</strong> 검증 &rarr; 론치 Go/No-Go, 사후 &rarr; Go/Kill/Iterate</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 16px;">📢</span>
+        <span style="font-size: 13px;"><strong>나머지:</strong> PM이 진행하고 공유. 24시간 이의 없으면 자동 진행</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="section-label">상세 프로세스 문서</div>
+    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.7;">
+      Phase별 Definition of Done, 체크포인트, PM vs PM Director 역할 구분 등 상세 내용은 <code style="color: var(--accent);">context-library/pm-process-standard.md</code>에 있습니다.
+    </p>
+  </div>
+
+  <footer>
+    <p>
+      Built by Nova for Opensurvey Product Team<br>
+      Questions? Slack <a href="#">#team-pm</a> 채널에서 물어보세요
+    </p>
+  </footer>
+
+</div>
+
+<script>
+function copyCode(el, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const hint = el.querySelector('.copy-hint');
+    if (hint) { hint.textContent = 'copied!'; setTimeout(() => hint.textContent = 'copy', 1500); }
+  });
+}
+</script>
+
+</body>
+</html>

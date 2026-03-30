@@ -40,7 +40,7 @@ claude
 
 ---
 
-## 3. 사용 가능한 스킬 (15개)
+## 3. 사용 가능한 스킬 (16개)
 
 ### Core PM Workflows (일상 루틴)
 
@@ -64,6 +64,7 @@ claude
 | `/impact-sizing` | 기회 크기 추정 | 우선순위 논의 전 |
 | `/create-tickets` | Jira 티켓 생성 | PRD → 엔지니어링 티켓 변환 |
 | `/generate-ai-prototype` | 프로토타입 프롬프트 | v0/Lovable/Bolt로 빠른 프로토타입 |
+| `/simulate-user` | ICP 페르소나 UX 시뮬레이션 | 프로토타입 만들고, 실제 유저 테스트 전 1차 검증 |
 | `/sales-brief` | 세일즈 브리프 | 제품 변경이 고객에게 영향줄 때 |
 | `/ask-nova` | Nova 관점 시뮬레이션 | 산출물을 Nova에게 보내기 전 셀프 점검 |
 

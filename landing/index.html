@@ -16,7 +16,7 @@
   </nav>
 
   <section class="hero" style="padding: 48px 0 40px; text-align: center;">
-    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px;">4일이면<br><em style="font-style: normal; color: var(--accent);">PM 파워유저</em>가 됩니다</h1>
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px;">5일이면<br><em style="font-style: normal; color: var(--accent);">PM 파워유저</em>가 됩니다</h1>
     <p style="font-size: 16px; color: var(--text-muted); max-width: 480px; margin: 0 auto; line-height: 1.7;">Claude Code 기반 PM 운영체제. 캘린더, Slack, Jira를 연결하면 매일 쓰는 업무가 자동화됩니다. 읽지 말고, 바로 실행하세요.</p>
   </section>
 
@@ -55,7 +55,7 @@
   </div>
 
   <div style="margin-top: 32px; margin-bottom: 8px;">
-    <div class="section-label">4-Day Onboarding</div>
+    <div class="section-label">5-Day Onboarding</div>
   </div>
 
   <div class="day-grid">
@@ -107,6 +107,18 @@
       </div>
       <div class="arrow">&rsaquo;</div>
     </a>
+    <a href="day5.html" class="day-card">
+      <div class="day-badge">5</div>
+      <div class="day-info">
+        <h3>피처 개발 프로세스</h3>
+        <div class="subtitle">Discovery부터 론치까지 7단계. 각 Phase에서 쓰는 스킬 실습</div>
+      </div>
+      <div class="day-meta">
+        <span class="time">읽기 15분 + 실습 30분</span>
+        <span class="cmd">/day5</span>
+      </div>
+      <div class="arrow">&rsaquo;</div>
+    </a>
   </div>
 
   <div class="card" style="margin-top: 32px; text-align: center;">
@@ -128,7 +140,7 @@
     </div>
   </div>
 
-  <div class="card" style="margin-top: 16px;" id="leaderboard-card">
+  <div class="card" style="margin-top: 16px; display: none;" id="leaderboard-card">
     <div class="section-label">Team Leaderboard</div>
     <div class="lb-tabs">
       <button class="lb-tab active" onclick="showLbPanel('pm')">PM Rankings</button>
@@ -153,7 +165,7 @@
   </div>
 
   <div class="card" style="margin-top: 16px;">
-    <div class="section-label">22 Skills Available</div>
+    <div class="section-label">23 Skills Available</div>
     <div class="skills-grid">
       <div class="skill-tag">/daily-plan<span class="desc">매일 아침 우선순위</span></div>
       <div class="skill-tag">/meeting-notes<span class="desc">미팅 후 정리</span></div>
@@ -163,6 +175,7 @@
       <div class="skill-tag">/prd-review-panel<span class="desc">멀티 관점 리뷰</span></div>
       <div class="skill-tag">/meeting-cleanup<span class="desc">하루 미팅 일괄 정리</span></div>
       <div class="skill-tag">/impact-sizing<span class="desc">기회 크기 추정</span></div>
+      <div class="skill-tag">/simulate-user<span class="desc">UX 페르소나 시뮬레이션</span></div>
       <div class="skill-tag">/action-items<span class="desc">액션아이템 추출</span></div>
       <div class="skill-tag">/weekly-plan<span class="desc">주간 우선순위</span></div>
       <div class="skill-tag">/decision-doc<span class="desc">의사결정 기록</span></div>
@@ -171,7 +184,45 @@
       <div class="skill-tag">/sales-brief<span class="desc">세일즈 브리프</span></div>
     </div>
     <p style="font-size: 12px; color: var(--text-dim); margin-top: 12px; text-align: center;">
-      + 8 more skills (weekly-review, generate-ai-prototype, weekly-plan...)
+      + 8 more skills (weekly-review, generate-ai-prototype, feature-results...)
+    </p>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="section-label">Feature Development Process</div>
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6;">피처 하나가 아이디어에서 론치까지 가는 흐름. 각 단계에서 어떤 스킬을 쓰는지.</p>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">Discovery</span>
+        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/impact-sizing</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/generate-ai-prototype</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/simulate-user</code></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">PRD</span>
+        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/prd-draft</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/prd-review-panel</code></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 70px; text-align: right; font-family: var(--mono);">설계</span>
+        <span style="font-size: 13px; color: var(--text-dim);">PM이 SRS/Figma 트래킹</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">스프린트</span>
+        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/create-tickets</code></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">검증</span>
+        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/launch-checklist</code></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">론치</span>
+        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/sales-brief</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/slack-message</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/status-update</code></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">사후</span>
+        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/feature-results</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/weekly-review</code></span>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: var(--text-dim); margin-top: 12px; text-align: center;">
+      <a href="day5.html" style="color: var(--accent); text-decoration: none;">Day 5에서 각 단계를 실습해보세요 &rarr;</a>
     </p>
   </div>
 
