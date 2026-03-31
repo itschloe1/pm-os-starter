@@ -54,6 +54,25 @@
     </div>
   </div>
 
+  <div class="card" style="margin-top: 32px; text-align: center;">
+    <div class="section-label">Core Loop</div>
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+      PM-OS는 <strong style="color: var(--text);">Context Engineering</strong>으로 동작합니다.<br>
+      context-library/에 맥락을 넣을수록, 모든 스킬의 결과가 좋아집니다.
+    </p>
+    <div class="flow">
+      <div class="flow-item">MCP 연결</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">스킬 실행</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">결과물 생성</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item">맥락 축적</div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-item" style="color: var(--accent); border-color: rgba(110,231,183,0.2);">더 좋은 결과</div>
+    </div>
+  </div>
+
   <div style="margin-top: 32px; margin-bottom: 8px;">
     <div class="section-label">5-Day Onboarding</div>
   </div>
@@ -121,22 +140,27 @@
     </a>
   </div>
 
-  <div class="card" style="margin-top: 32px; text-align: center;">
-    <div class="section-label">Core Loop</div>
-    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
-      PM-OS는 <strong style="color: var(--text);">Context Engineering</strong>으로 동작합니다.<br>
-      context-library/에 맥락을 넣을수록, 모든 스킬의 결과가 좋아집니다.
-    </p>
-    <div class="flow">
-      <div class="flow-item">MCP 연결</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-item">스킬 실행</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-item">결과물 생성</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-item">맥락 축적</div>
-      <div class="flow-arrow">&rarr;</div>
-      <div class="flow-item" style="color: var(--accent); border-color: rgba(110,231,183,0.2);">더 좋은 결과</div>
+  <!-- Daily Routine (flows from Day 1-4) -->
+  <div class="card" style="margin-top: 32px;">
+    <div class="section-label">Recommended Daily Routine</div>
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6;">Day 1~4에서 배운 스킬로 매일 반복하는 루틴</p>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 52px; text-align: right; font-family: var(--mono);">09:00</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/daily-plan</code> <span style="color: var(--text-dim);">&mdash;</span> <span style="color: var(--text-muted);">오늘 우선순위 정리</span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 52px; text-align: right; font-family: var(--mono);">미팅 후</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/meeting-notes</code> <span style="color: var(--text-dim);">&mdash;</span> <span style="color: var(--text-muted);">구조화 + 액션아이템</span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 52px; text-align: right; font-family: var(--mono);">공유 시</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/slack-message</code> <span style="color: var(--text-dim);">&mdash;</span> <span style="color: var(--text-muted);">팀에 메시지 전송</span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 12px; color: var(--text-dim); width: 52px; text-align: right; font-family: var(--mono);">금요일</span>
+        <span style="font-size: 14px;"><code style="color: var(--accent);">/weekly-review</code> <span style="color: var(--text-dim);">&mdash;</span> <span style="color: var(--text-muted);">한 주 회고</span></span>
+      </div>
     </div>
   </div>
 
@@ -190,62 +214,111 @@
     </p>
   </div>
 
+  <!-- Feature Development Process (flows from Day 5) -->
   <div class="card" style="margin-top: 16px;">
     <div class="section-label">Feature Development Process</div>
-    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6;">피처 하나가 아이디어에서 론치까지 가는 흐름. 각 단계에서 어떤 스킬을 쓰는지.</p>
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">Discovery</span>
-        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/impact-sizing</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/generate-ai-prototype</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/simulate-user</code></span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">PRD</span>
-        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/prd-draft</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/prd-review-panel</code></span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 12px; color: var(--text-dim); width: 70px; text-align: right; font-family: var(--mono);">설계</span>
-        <span style="font-size: 13px; color: var(--text-dim);">PM이 SRS/Figma 트래킹</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">스프린트</span>
-        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/create-tickets</code></span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">검증</span>
-        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/launch-checklist</code></span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">론치</span>
-        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/launch-comms</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/sales-brief</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/slack-message</code></span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 12px; color: var(--accent); width: 70px; text-align: right; font-family: var(--mono);">사후</span>
-        <span style="font-size: 13px;"><code style="color: var(--accent); font-size: 12px;">/feature-results</code> &rarr; <code style="color: var(--accent); font-size: 12px;">/weekly-review</code></span>
-      </div>
-    </div>
-    <p style="font-size: 12px; color: var(--text-dim); margin-top: 12px; text-align: center;">
-      <a href="day5.html" style="color: var(--accent); text-decoration: none;">Day 5에서 각 단계를 실습해보세요 &rarr;</a>
-    </p>
-  </div>
+    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6;">피처 하나가 아이디어에서 론치까지 가는 흐름. <a href="day5.html" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(110,231,183,0.3);">Day 5</a>에서 실습합니다.</p>
 
-  <div class="card" style="margin-top: 16px;">
-    <div class="section-label">Recommended Daily Routine</div>
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">09:00</span>
-        <span style="font-size: 14px;"><code style="color: var(--accent);">/daily-plan</code> &mdash; 오늘 우선순위 정리</span>
+    <div class="process-timeline">
+      <!-- Phase 0 -->
+      <div class="process-phase">
+        <div class="phase-marker">
+          <span class="phase-num">0</span>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-name">Discovery</div>
+          <div class="phase-skills">
+            <code>/impact-sizing</code>
+            <span class="phase-arrow">&rarr;</span>
+            <code>/generate-ai-prototype</code>
+            <span class="phase-arrow">&rarr;</span>
+            <code>/simulate-user</code>
+          </div>
+        </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">미팅 후</span>
-        <span style="font-size: 14px;"><code style="color: var(--accent);">/meeting-notes</code> &mdash; 구조화 + 액션아이템</span>
+      <!-- Phase 1 -->
+      <div class="process-phase">
+        <div class="phase-marker">
+          <span class="phase-num">1</span>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-name">PRD</div>
+          <div class="phase-skills">
+            <code>/prd-draft</code>
+            <span class="phase-arrow">&rarr;</span>
+            <code>/prd-review-panel</code>
+          </div>
+        </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">공유 시</span>
-        <span style="font-size: 14px;"><code style="color: var(--accent);">/slack-message</code> &mdash; 팀에 메시지 전송</span>
+      <!-- Phase 2 -->
+      <div class="process-phase phase-manual">
+        <div class="phase-marker">
+          <span class="phase-num">2</span>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-name">설계</div>
+          <div class="phase-skills"><span style="color: var(--text-dim); font-size: 12px;">PM이 SRS/Figma 트래킹</span></div>
+        </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="font-size: 12px; color: var(--text-dim); width: 60px; text-align: right; font-family: var(--mono);">금요일</span>
-        <span style="font-size: 14px;"><code style="color: var(--accent);">/weekly-review</code> &mdash; 한 주 회고</span>
+      <!-- Phase 3 -->
+      <div class="process-phase">
+        <div class="phase-marker">
+          <span class="phase-num">3</span>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-name">스프린트</div>
+          <div class="phase-skills">
+            <code>/create-tickets</code>
+          </div>
+        </div>
+      </div>
+      <!-- Phase 4 -->
+      <div class="process-phase">
+        <div class="phase-marker">
+          <span class="phase-num">4</span>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-name">검증</div>
+          <div class="phase-skills">
+            <code>/launch-checklist</code>
+          </div>
+        </div>
+      </div>
+      <!-- Phase 5 -->
+      <div class="process-phase">
+        <div class="phase-marker">
+          <span class="phase-num">5</span>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-name">론치</div>
+          <div class="phase-skills">
+            <code>/launch-comms</code>
+            <span class="phase-arrow">&rarr;</span>
+            <code>/sales-brief</code>
+            <span class="phase-arrow">&rarr;</span>
+            <code>/slack-message</code>
+          </div>
+        </div>
+      </div>
+      <!-- Phase 6 -->
+      <div class="process-phase process-phase-last">
+        <div class="phase-marker">
+          <span class="phase-num">6</span>
+        </div>
+        <div class="phase-content">
+          <div class="phase-name">사후</div>
+          <div class="phase-skills">
+            <code>/feature-results</code>
+            <span class="phase-arrow">&rarr;</span>
+            <code>/weekly-review</code>
+          </div>
+        </div>
       </div>
     </div>
   </div>
